@@ -2,13 +2,12 @@ package lesson02;
 // Minaev Roman
 
 public class Homework2 {
-    private static String word;
 
     public static void main(String[] args) {
         checkSum() ;
         checkNumber();
         checkNumberNew();
-      // printWord();
+      printWord();
 
 
     }
@@ -37,7 +36,7 @@ public class Homework2 {
 
 
     }
-    public static void printWord ( int count = 5, String word:"Hello" ) {
+    public static void printWord ()  { int count = 5; String word = "Hello";
         for ( int i=1; i <= count; i++ )
             System.out.println("String #" + i + ":" + word );
     }
