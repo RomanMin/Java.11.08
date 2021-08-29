@@ -34,21 +34,21 @@ public class Homework04 {
     public static void main(String[] args) {
 
         createMap();
-        randomRange();
+
     }
 
         public static void createMap() {
-            mapWidth = randomRange(mapSizeMin, mapSizeMax);
             mapHeight = randomRange(mapSizeMin, mapSizeMax);
-            map = new char[mapWidth][mapHeight];
-            invMap = new char[mapWidth][mapHeight];
+            mapWidth = randomRange(mapSizeMin, mapSizeMax);
+            map = new char[mapHeight][mapWidth];
+            invMap = new char[mapHeight][mapWidth];
 
-            for (int y = 0; y < mapWidth; y++) {
+            for (int y = 0; y < mapHeight; y++) {
                 for (int x = 0; x < mapWidth; x++) {
                     map[y][x] = readyCell;
                 }
             }
-System.out.println("Create Map. Size " + mapWidth + " x " + mapHeight);
+System.out.println("Create Map. Size " + mapHeight + " x " + mapWidth);
 
         }
         public static int randomRange( int min, int max ) {
