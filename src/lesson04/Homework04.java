@@ -41,9 +41,18 @@ public class Homework04 {
         createMap();
         createPlayer();
         createEnemies();
-        showMap();
-        changePlayerPos();
-        showMap();
+        while (true) {
+            showMap();
+            changePlayerPos();
+            if (!isPlayerAlive()) {
+                System.out.println("GAME OVER");
+                break;
+            }
+            if (isMapOver()) {
+                System.out.println("YOU WIN");
+                break;
+            }
+        }
 
 
     }
@@ -81,12 +90,12 @@ public class Homework04 {
                     playerPositionX += 1;
                     break;
             }
-            }   while (!isPlayerPosCorrect(currentPosX, currentPosY, playerPositionX, playerPositionY ));
-            playerAction(currentPosX, currentPosY, playerPositionX, playerPositionY );
+            }   while (!isPlayerPosCorrect(currentPosY, currentPosX, playerPositionY, playerPositionX ));
+            playerAction(currentPosY, currentPosX, playerPositionY, playerPositionX );
         }
-        public static boolean isPlayerPosCorrect( int currentPosX, int currentPosY,  int nextX, int nextY) {
+        public static boolean isPlayerPosCorrect( int currentPosY, int currentPosX,  int nextY, int nextX) {
 
-        if (nextY >= 0 && nextY < mapWidth && nextX >= 0 && nextX < mapHeight){
+        if (nextY >= 0 && nextY < mapHeight && nextX >= 0 && nextX < mapWidth){
             System.out.println("Player move to [" + (nextY + 1) + ":" + (nextX + 1) + "] Success!!!");
             return true;
         }  else {
@@ -97,10 +106,10 @@ public class Homework04 {
 
         }
         }
-        public static void playerAction ( int currentPosX, int currentPosY,  int nextX, int nextY) {
+        public static void playerAction ( int currentPosY, int currentPosX,  int nextY, int nextX) {
         if (map[nextY][nextX] == enemy) {
             playerHealth -= enemyDamage;
-            System.out.println("ALarRM!!!  You get damage " + enemyDamage + ". Player health now:" + playerHealth);
+            System.out.println("ALarRM!!!  You get damage " + enemyDamage + ". Player health now: " + playerHealth);
         }
             map[currentPosY][currentPosX] = usedCell;
             map[nextY][nextX] = player;
@@ -147,6 +156,20 @@ System.out.println("Create Map. Size " + mapHeight + " x " + mapWidth);
                 System.out.println();
             }
             System.out.println("=============");
+        }
+        public static boolean isMapOver() {
+            for (int y = 0; y < mapHeight; y++) {
+                for (int x = 0; x < mapWidth; x++) {
+                   if (map[y][x] == usedCell);
+                   return false;
+                }
+            }
+            return false;
+        }
+        public static boolean isPlayerAlive() {
+        return playerHealth > 0;
+
+
         }
         public static int randomRange( int min, int max ) {
             return min + random.nextInt(max - min + 1 );
