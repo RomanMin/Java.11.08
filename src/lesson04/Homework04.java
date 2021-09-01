@@ -161,8 +161,11 @@ System.out.println("Create Map. Size " + mapHeight + " x " + mapWidth);
             for (int y = 0; y < mapHeight; y++) {
                 for (int x = 0; x < mapWidth; x++) {
                    if (map[y][x] == usedCell);
-                   return false;
+                    {
+                        return false;
+                    }
                 }
+
             }
             return false;
         }
