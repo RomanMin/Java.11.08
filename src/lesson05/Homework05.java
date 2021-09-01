@@ -6,6 +6,7 @@ public class Homework05 {
         Worker firstWorker = new Worker("Name1", "Programmer", "email@1mail.com", "5677", 3000, 46);
 
         System.out.println("Worker's data");
+
         firstWorker.printData();
 
         Worker[] persArray = new Worker[5];
