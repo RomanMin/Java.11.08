@@ -22,7 +22,7 @@ public class Homework05 {
 
             if (persArray[i].age > 40) {
 
-                System.out.println(persArray[i].age);
+                persArray[i].printData();
             }
         }
 
