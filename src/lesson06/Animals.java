@@ -9,7 +9,7 @@ public abstract class Animals {
     private int swimDist;
 
    public static int animalsCount = 0;
-   public static int fullDist = 1000;
+    public static int fullDist = 1000;
    public static int curDistanse;
 
 
@@ -27,7 +27,7 @@ public abstract class Animals {
     public void run() {
 
         System.out.println(color + " " + type +  " " + name + " бежит на " + runDist + " метров");
-        System.out.println("До конца дистанции осталось " + curDistanse + " метров");
+        System.out.println("До конца дистанции осталось " + (fullDist - this.runDist) + " метров");
     }
 
     public void swim() {
@@ -38,10 +38,10 @@ public abstract class Animals {
         System.out.println("Всего Животных :" + animalsCount);
     }
 
-    public void distCount(int runDist, int fullDist) {
-        int curDistanse = (fullDist - this.runDist);
-    }
+
+
 }
+
 
 
 
