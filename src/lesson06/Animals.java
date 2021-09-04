@@ -2,11 +2,11 @@ package lesson06;
 
 public abstract class Animals {
 
-    String type;
-    String name;
-    String color;
-    int runDist;
-    int swimDist;
+    private String type;
+    private String name;
+    private String color;
+    private int runDist;
+    private int swimDist;
 
    public static int animalsCount = 0;
    public static int fullDist = 1000;
@@ -38,7 +38,9 @@ public abstract class Animals {
         System.out.println("Всего Животных :" + animalsCount);
     }
 
-    public void distCount () {curDistanse = (fullDist-this.runDist);}
+    public void distCount(int runDist, int fullDist) {
+        int curDistanse = (fullDist - this.runDist);
+    }
 }
 
 

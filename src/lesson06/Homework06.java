@@ -1,5 +1,7 @@
 package lesson06;
 
+import static lesson06.Animals.animalsCount;
+
 public class Homework06 {
 
     public static void main(String[] args) {
@@ -10,6 +12,7 @@ public class Homework06 {
         dog1.run();
         //cat1.swim();
         //dog1.swim();
+        System.out.println("Участникоа забега: " + animalsCount);
 
 
     }
