@@ -23,11 +23,13 @@ public abstract class Animals {
 
 
     }
-
+    public void distCount() {
+       curDistanse = (fullDist - runDist);
+    }
     public void run() {
 
         System.out.println(color + " " + type +  " " + name + " бежит на " + runDist + " метров");
-        System.out.println("До конца дистанции осталось " + (fullDist - this.runDist) + " метров");
+
     }
 
     public void swim() {
