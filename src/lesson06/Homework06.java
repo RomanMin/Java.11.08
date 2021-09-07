@@ -2,7 +2,11 @@ package lesson06;
 
 import static lesson06.Animals.animalsCount;
 
+
+
+
 public class Homework06 {
+
 
     public static void main(String[] args) {
         Cat cat1 = new Cat("Кошка", "Мурка", "Пёстрая", 200, 0 );
@@ -12,7 +16,11 @@ public class Homework06 {
         dog1.run();
         //cat1.swim();
         //dog1.swim();
-        System.out.println("Участникоа забега: " + animalsCount);
+        System.out.println("Участников забега: " + animalsCount);
+ //       System.out.println(curDistanse);
+
+
+
 
 
     }
