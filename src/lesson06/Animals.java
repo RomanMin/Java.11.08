@@ -1,16 +1,20 @@
 package lesson06;
 
+
 public abstract class Animals {
 
-    String type;
-    String name;
-    String color;
-    int runDist;
-    int swimDist;
+    private String type;
+    private String name;
+    private String color;
+    public int runDist;
+    private int swimDist;
 
    public static int animalsCount = 0;
    public static int fullDist = 1000;
    public static int curDistanse;
+
+
+
 
 
    Animals(String type, String name, String color, int runDist, int swimDist) {
@@ -24,10 +28,13 @@ public abstract class Animals {
 
     }
 
+
+
     public void run() {
 
-        System.out.println(color + " " + type +  " " + name + " бежит на " + runDist + " метров");
-        System.out.println("До конца дистанции осталось " + curDistanse + " метров");
+       System.out.println(color + " " + type +  " " + name + " бежит на " + runDist + " метров");
+       System.out.println("До конца дистанции осталось " + curDistanse + " метров");
+
     }
 
     public void swim() {
@@ -38,8 +45,12 @@ public abstract class Animals {
         System.out.println("Всего Животных :" + animalsCount);
     }
 
-    public void distCount () {curDistanse = (fullDist-this.runDist);}
+    public  int getCurDistanse() {
+        return curDistanse = (fullDist  - this.runDist);
+        }
+
 }
+
 
 
 

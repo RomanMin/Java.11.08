@@ -6,6 +6,7 @@ public class Dog extends Animals {
 
     {
         super("Собака", "Тузик", "Пестрая", 500, 150);
+        animalsCount++;
     }
 
 }
