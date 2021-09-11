@@ -4,8 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GameWindow extends JFrame {
-    private  int winWidth=400;
-    private  int winHeight=300;
+    private  int winWidth=600;
+    private  int winHeight=400;
     private  int winPosX=200;
     private  int winPosY=100;
 
@@ -31,8 +31,9 @@ public class GameWindow extends JFrame {
     private JButton moveDirrDown;
     private JButton moveDirrLeft;
     private JButton moveDirrRight;
-    private JPanel moveDirrEmpty1;
-    private JPanel moveDirrEmpty2;
+
+    private TextArea gameLogArea;
+    private JScrollPane scrollGameLog;
 
 
     GameWindow() {
@@ -71,11 +72,14 @@ public class GameWindow extends JFrame {
         gameInfo();
         playerInfo();
         moveDirrection();
+        setupGameLogArea();
 
         gui.add(gameControlPanel);
         gui.add(gameInfo);
         gui.add(playerInfo);
         gui.add(moveDirrection);
+        gui.add(gameLogArea, BorderLayout.SOUTH);
+
 
         }
 
@@ -140,6 +144,11 @@ public class GameWindow extends JFrame {
         moveDirrection.add(moveDirrDown);
         moveDirrection.add(moveDirrRight);
 
+
+    }
+    private void setupGameLogArea() {
+        gameLogArea = new TextArea();
+        scrollGameLog = new JScrollPane(gameLogArea);
 
     }
 
