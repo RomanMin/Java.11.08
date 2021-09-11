@@ -21,6 +21,20 @@ public class GameWindow extends JFrame {
     private JLabel currentMapSize;
     private JLabel countEnemies;
 
+    private JPanel playerInfo;
+    private JLabel playerHealth;
+    private JLabel playerDamage;
+    private JLabel playerPosition;
+
+    private JPanel moveDirrection;
+    private JButton moveDirrUp;
+    private JButton moveDirrDown;
+    private JButton moveDirrLeft;
+    private JButton moveDirrRight;
+    private JPanel moveDirrEmpty1;
+    private JPanel moveDirrEmpty2;
+
+
     GameWindow() {
 
         setupWindow();
@@ -55,9 +69,13 @@ public class GameWindow extends JFrame {
 
         gameControl();
         gameInfo();
+        playerInfo();
+        moveDirrection();
 
         gui.add(gameControlPanel);
         gui.add(gameInfo);
+        gui.add(playerInfo);
+        gui.add(moveDirrection);
 
         }
 
@@ -89,6 +107,39 @@ public class GameWindow extends JFrame {
         gameInfo.add(currentLevel);
         gameInfo.add(currentMapSize);
         gameInfo.add(countEnemies);
+
+    }
+    private void playerInfo() {
+
+        playerInfo = new JPanel();
+        playerInfo.setLayout(new GridLayout(4, 1));
+
+        playerHealth = new JLabel("HEALTH: - ");
+        playerDamage = new JLabel("DAMAGE: - ");
+        playerPosition = new JLabel("POSITION: y : x ");
+
+        playerInfo.add(new JLabel("+++ PLAYER INFO +++"));
+        playerInfo.add(playerHealth);
+        playerInfo.add(playerDamage);
+        playerInfo.add(playerPosition);
+    }
+    private void moveDirrection() {
+        moveDirrection = new JPanel();
+        moveDirrection.setLayout(new GridLayout(2, 3));
+
+        moveDirrUp = new JButton("\uD83E\uDC45");
+        moveDirrDown = new JButton("\uD83E\uDC47");
+        moveDirrLeft = new JButton("\uD83E\uDC44");
+        moveDirrRight = new JButton("\uD83E\uDC46");
+
+
+        moveDirrection.add(new JPanel());
+        moveDirrection.add(moveDirrUp);
+        moveDirrection.add(new JPanel());
+        moveDirrection.add(moveDirrLeft);
+        moveDirrection.add(moveDirrDown);
+        moveDirrection.add(moveDirrRight);
+
 
     }
 
